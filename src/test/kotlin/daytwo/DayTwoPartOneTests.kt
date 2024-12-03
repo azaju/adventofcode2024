@@ -5,6 +5,7 @@ import org.example.daytwo.DayTwoPartOne.Companion.differByAtLeastOne
 import org.example.daytwo.DayTwoPartOne.Companion.differByMaxThree
 import org.example.daytwo.DayTwoPartOne.Companion.isDecreasing
 import org.example.daytwo.DayTwoPartOne.Companion.isIncreasing
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -37,6 +38,6 @@ class DayTwoPartOneTests {
 
     @Test
     fun testNumberOfSafeReports() {
-        calculateNumberOfSafeReport("src/test/resources/dataday2.txt")
+        assertEquals(371, calculateNumberOfSafeReport("src/test/resources/dataday2.txt"))
     }
 }

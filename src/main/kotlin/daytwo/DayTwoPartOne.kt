@@ -8,73 +8,33 @@ class DayTwoPartOne {
     companion object {
 
         fun isIncreasing(report: MutableList<Int>): Boolean {
-            var increasedList = false
-
-            for (i in 0 until report.size - 1) {
-                if (i > 0) {
-                    if ((report[i] > report[i - 1]) and (report[i] < report[i + 1])) increasedList = true
-                    else return false
-                } else
-                    if (report[i] < report[i + 1])
-                        increasedList = true
-                    else
-                        return false
+            for (i in 1 until report.size) {
+                if (report[i] <= report[i - 1]) {
+                    return false
+                }
             }
-            return increasedList
+            return true
         }
 
         fun isDecreasing(report: MutableList<Int>): Boolean {
-            var decreasedList = false
-
-            for (i in 0 until report.size - 1) {
-                if (i > 0) {
-                    if ((report[i] < report[i - 1]) and (report[i] > report[i + 1])) decreasedList = true
-                    else return false
-                } else
-                    if (report[i] > report[i + 1])
-                        decreasedList = true
-                    else
-                        return false
+            for (i in 1 until report.size) {
+                if (report[i] >= report[i - 1]) return false
             }
-            return decreasedList
+            return true
         }
 
         fun differByAtLeastOne(report: MutableList<Int>): Boolean {
-            var differByAtLeastOne = false;
-            for (i in 0 until report.size - 1) {
-                if (i > 0) {
-                    if (
-                        (abs(report[i] - report[i - 1]) >= 1) and
-                        (abs(report[i] - report[i + 1]) >= 1)
-                    )
-                        differByAtLeastOne = true
-                    else return false
-                } else
-                    if (abs(report[i] - report[i + 1]) >= 1)
-                        differByAtLeastOne = true
-                    else
-                        return false
+            for (i in 1 until report.size) {
+                if ((abs(report[i] - report[i - 1]) == 0)) return false
             }
-            return differByAtLeastOne;
+            return true
         }
 
         fun differByMaxThree(report: MutableList<Int>): Boolean {
-            var differByMaxThree = false;
-            for (i in 0 until report.size - 1) {
-                if (i > 0) {
-                    if (
-                        (abs(report[i] - report[i - 1]) <= 3) and
-                        (abs(report[i] - report[i + 1]) <= 3)
-                    )
-                        differByMaxThree = true
-                    else return false
-                } else
-                    if (abs(report[i] - report[i + 1]) <= 3)
-                        differByMaxThree = true
-                    else
-                        return false
+            for (i in 1 until report.size) {
+                if ((abs(report[i] - report[i - 1]) > 3)) return false
             }
-            return differByMaxThree;
+            return true
         }
 
         fun calculateNumberOfSafeReport(fileName: String): Int {
@@ -95,23 +55,7 @@ class DayTwoPartOne {
                         totalSafeReport +=1
                 }
             }
-            println(totalSafeReport)
             return totalSafeReport
         }
     }
-
-    /*
-    File(filePath).forEachLine { line ->
-                val values = line.split("\\s+".toRegex()) // Séparation des valeurs par espaces ou tabulations
-                if (values.size >= 2) { // S'assurer qu'il y a au moins 2 colonnes
-                    val value1 = values[0].toIntOrNull() // Convertir en entier
-                    val value2 = values[1].toIntOrNull()
-
-                    // Ajouter les valeurs aux listes respectives si elles sont valides
-                    value1?.let { firstList.add(it) }
-                    value2?.let { secondList.add(it) }
-                }
-            }
-    */
-
 }
