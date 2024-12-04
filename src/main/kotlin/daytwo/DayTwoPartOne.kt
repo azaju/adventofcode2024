@@ -38,14 +38,11 @@ class DayTwoPartOne {
         }
 
         fun calculateNumberOfSafeReport(fileName: String): Int {
-            // Chemin vers le fichier texte
             val filePath = fileName
 
-            // Initialisation des listes pour chaque colonne
             var reportList = mutableListOf<MutableList<Int>>()
 
             var totalSafeReport = 0;
-            // Lecture du fichier ligne par ligne
             File(filePath).forEachLine { line ->
                 reportList.add(line.split("\\s+".toRegex()).map { it.toInt() }.toMutableList())
             }
