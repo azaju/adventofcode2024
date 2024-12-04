@@ -1,31 +1,12 @@
 package org.example.dayone
 
 import java.io.File
-import kotlin.math.abs
 
-class DayOne {
+class DayOnePartTwo {
+
     companion object {
-        fun diffBetweenTwoNumbers(minLeft: Int, minRight: Int): Int {
-            return abs(minLeft - minRight)
-        }
 
-        fun getMin(list: List<Int>): Int {
-            return list.minOrNull() ?: 0
-        }
-
-        fun getTotalDiff(firstList : MutableList<Int>, secondList : MutableList<Int>): Int {
-
-            firstList.sort()
-            secondList.sort()
-            var total = 0
-            firstList.zip(secondList).map { (a, b) ->
-                total += diffBetweenTwoNumbers(a, b)
-            }
-
-            return total
-        }
-
-        fun convertFileToLists(fileName: String) {
+        fun calculateScore(fileName: String) {
             // Chemin vers le fichier texte
             val filePath = fileName
 
@@ -45,10 +26,21 @@ class DayOne {
                     value2?.let { secondList.add(it) }
                 }
             }
+            var total = 0
+            firstList.forEach() {
+                total += findNbOccurencies(it, secondList)*it
+            }
+            println(total)
+        }
 
-            var total = getTotalDiff(firstList, secondList)
-
-            println("Total: $total")
+        fun findNbOccurencies(number:Int, secondList: MutableList<Int>): Int {
+            var total =0
+            secondList.forEach() {
+                if (it == number) {
+                    total++
+                }
+            }
+            return total
         }
     }
 }

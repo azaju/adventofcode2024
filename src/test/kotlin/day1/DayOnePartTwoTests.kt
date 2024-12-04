@@ -1,4 +1,4 @@
-package dayone
+package day1
 
 import org.example.dayone.DayOnePartTwo.Companion.calculateScore
 import org.example.dayone.DayOnePartTwo.Companion.findNbOccurencies

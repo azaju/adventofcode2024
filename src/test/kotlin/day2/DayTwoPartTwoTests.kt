@@ -1,4 +1,4 @@
-package daytwo
+package day2
 
 import org.example.daytwo.DayTwoPartTwo.Companion.calculateNumberOfSafeReport
 import org.example.daytwo.DayTwoPartTwo.Companion.differByAtLeastOneWithMaxOneError

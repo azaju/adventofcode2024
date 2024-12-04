@@ -1,9 +1,9 @@
-package dayone
+package day1
 
-import org.example.dayone.DayOne.Companion.convertFileToLists
-import org.example.dayone.DayOne.Companion.diffBetweenTwoNumbers
-import org.example.dayone.DayOne.Companion.getMin
-import org.example.dayone.DayOne.Companion.getTotalDiff
+import day1.DayOne.Companion.convertFileToLists
+import day1.DayOne.Companion.diffBetweenTwoNumbers
+import day1.DayOne.Companion.getMin
+import day1.DayOne.Companion.getTotalDiff
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
